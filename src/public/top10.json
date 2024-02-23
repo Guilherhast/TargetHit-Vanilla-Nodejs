@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Gils\u00e3o",
+        "hits": 12,
+        "clicks": 12
+    },
+    {
+        "name": "Mario",
+        "hits": 10,
+        "clicks": 10
+    },
+    {
+        "name": "Sniper",
+        "hits": 8,
+        "clicks": 8
+    },
+    {
+        "name": "Player",
+        "hits": 8,
+        "clicks": 8
+    },
+    {
+        "name": "Gui2024",
+        "hits": 8,
+        "clicks": 8
+    },
+    {
+        "name": "Player",
+        "hits": 8,
+        "clicks": 9
+    },
+    {
+        "name": "Player",
+        "hits": 8,
+        "clicks": 9
+    },
+    {
+        "name": "Sniper",
+        "hits": 7,
+        "clicks": 9
+    },
+    {
+        "name": "Player",
+        "hits": 7,
+        "clicks": 9
+    },
+    {
+        "name": "Gui2024",
+        "hits": 4,
+        "clicks": 4
+    }
+]

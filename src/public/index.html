@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TargetHit</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="network.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Board -->
+  <div id="game" class="centered cover screen">
+    <svg id="board" class="cover">
+      <circle id="target" fill="red" r="10" cx="50%" cy="50%"></circle>
+    </svg>
+  </div>
+  <!-- Menu -->
+  <div id="menu" class="centered cover screen">
+    <div id="score">
+      <div id="hitsDiv">
+        <span class="scTitle">Hits</span>
+        <span class="scValue">0</span>
+      </div>
+      <div id="clicksDiv">
+        <span class="scTitle">Clicks</span>
+        <span class="scValue">0</span>
+      </div>
+    </div>
+    <div>
+      <button id="btnStart">Start</button>
+    </div>
+    <div>
+      <button id="btnRank">Ranking</button>
+      <button id="btnLogin">Login</button>
+    </div>
+  </div>
+  <!--Ranking-->
+  <div id="ranking" class="centered cover screen">
+    <table>
+      <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>Clicks</th>
+        <th>Hits</th>
+      </tr>
+      <tbody id="rankList"></tbody>
+    </table>
+    <button id="goBackRank">Menu</button>
+  </div>
+  <!--Login-->
+  <div id="login" class="centered cover screen">
+    <div id="loginscreen">
+      <h2>Login</h2>
+      <label for="user">User</label>
+      <input type="text" id="User" name="User" onkeydown="onEnter(event)" autocomplete="off">
+      <button id="btnSave" onclick="login(event)">Save</button>
+      <button id="btnBack">Back</button>
+    </div>
+  </div>
+</body>
+</html>
