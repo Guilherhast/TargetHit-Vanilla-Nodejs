@@ -4,8 +4,8 @@
 	"description": "",
 	"main": "src/index.js",
 	"scripts": {
-		"start": "npx pm2 start src/index.js",
-		"dev": "npx pm2 start 'src/index.js' --no-daemon --watch --no-autorestart",
+		"start": "npx pm2 start src/index.js --name TargetHit",
+		"dev": "npx pm2 start 'src/index.js' --no-daemon --watch --no-autorestart --ignore-watch=src/**/*.json",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",

@@ -1,5 +1,5 @@
 // Constants
-const scoresUrl = "./scores.php";
+const scoresUrl = "/api/";
 
 
 // Variables

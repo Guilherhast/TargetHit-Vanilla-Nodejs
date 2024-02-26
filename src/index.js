@@ -4,6 +4,7 @@ const http = require('node:http'),
 
 // Local imports
 const StaticHandlerFactory = require('./staticHandler');
+const apiHandlerFactory = require('./apiHandler');
 
 // Docs
 // https://nodejs.org/api/http.html#httpcreateserveroptions-requestlistener
@@ -11,7 +12,9 @@ const StaticHandlerFactory = require('./staticHandler');
 // https://www.w3schools.com/nodejs/nodejs_url.asp
 
 // Constants
-const publicDir = path.join(__dirname, './public');
+const PORT  = 8000;
+const publicDir = path.join(__dirname, 'public');
+const dbFile = path.join(publicDir, 'top10.json');
 
 // Functions
 function isAPI(url){
@@ -19,21 +22,14 @@ function isAPI(url){
 	return pathname[1].toLowerCase() == "api";
 }
 
-function handleAPI(req, res){
-	res.writeHead(200, {'Content-Type': 'application/json'});
-	res.end(JSON.stringify({data: 'Hello from api'}));
-}
-
+// Factorated functions
 const handleStatic = StaticHandlerFactory(publicDir);
-
-console.log(publicDir);
+const handleAPI = apiHandlerFactory(dbFile);
 
 // Create a local server to receive data from
 const server = http.createServer((req, res) => {
-
 	if (isAPI(req.url)) handleAPI(req, res);
 	else handleStatic(req, res);
-
 });
 
-server.listen(8000);
+server.listen(PORT, ()=>console.log(`Server started on localhost:${PORT}`));
