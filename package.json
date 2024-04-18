@@ -5,7 +5,11 @@
 	"main": "src/index.js",
 	"scripts": {
 		"start": "npx pm2 start src/index.js --name TargetHit",
-		"dev": "npx pm2 start 'src/index.js' --no-daemon --watch --no-autorestart --ignore-watch=src/**/*.json",
+		"dev": "npx pm2 start 'src/index.js' --watch --no-autorestart --ignore-watch=src/**/*.json --name TargetHit",
+		"watch": "npx pm2 start 'src/index.js' --no-daemon --watch --no-autorestart --ignore-watch=src/**/*.json --name TargetHit",
+		"stop": "npx pm2 stop TargetHit",
+		"del": "npx pm2 delete TargetHit",
+		"delete": "npx pm2 delete TargetHit",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",

@@ -12,11 +12,14 @@ const mimeTypes = {
 };
 
 // Functions
+function normalizePath(pathStr){
+	const isDir = pathStr.at(-1) == '/';
+	return isDir? path.join(pathStr.toLowerCase(), "index.html"): pathStr.toLowerCase();
+}
+
 function getFileName(url, dir){
 	const href = Url.parse(url, true);
-	let filename = path.join(dir, href.pathname.toLowerCase());
-
-	if (filename.at(-1) == '/') filename = path.join(filename, 'index.html');
+	const filename = path.join(dir, normalizePath(href.pathname));
 
 	return filename;
 }
